@@ -7,6 +7,10 @@ module Delayed
         @id = attributes[:id]
       end
 
+      def to_param
+        id
+      end
+
       def self.find *args
         new id: 1
       end
