@@ -19,7 +19,9 @@
       <% jobs.each do |job| %>
         <tr>
           <td><%= link_to job.id, job_path(job) %></td>
-          <td></td>
+          <td class="<%= status_dom_class(job) %>">
+            <%= status_text(job).capitalize %>
+          </td>
           <td><%= job.created_at %></td>
           <td><%= job.run_at %></td>
           <td><%= job.attempts %></td>
