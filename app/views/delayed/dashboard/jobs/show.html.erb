@@ -1,1 +1,5 @@
-<h1>Job <%= job.id %></h1>
+<% title "Job #{job.id}" %>
+
+<h1><%= title %></h1>
+
+<pre><%= job.last_error %></pre>

@@ -1,8 +1,31 @@
-<h1>Jobs</h1>
-<table>
-  <tr>
-    <% jobs.each do |job| %>
-      <%= job.id %>
-    <% end %>
-  </tr>
-</table>
+<% title 'Jobs' %>
+
+<h1><%= title %></h1>
+<% if jobs.empty? %>
+  <p>An empty job queue is a good job queue.</p>
+<% else %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Run At</th>
+        <th>Attempts</th>
+        <th>Last Error</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% jobs.each do |job| %>
+        <tr>
+          <td><%= link_to job.id, job_path(job) %></td>
+          <td></td>
+          <td><%= job.created_at %></td>
+          <td><%= job.run_at %></td>
+          <td><%= job.attempts %></td>
+          <td><%= truncate job.last_error %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

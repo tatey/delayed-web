@@ -1,6 +1,6 @@
 module Delayed
   module Dashboard
-    class JobsController < ActionController::Base
+    class JobsController < ApplicationController
     private
 
       def job
