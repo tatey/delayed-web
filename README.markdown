@@ -2,6 +2,13 @@
 
 Simple web interface for exposing the [Delayed::Job](https://github.com/collectiveidea/delayed_job) queue.
 
+## Requirements
+
+* Ruby 1.9.2, 1.9.3 or 2.0.0
+* Rails 3.2.x or 4.0.x
+* Delayed Job 3.0.x, 4.0.x
+* ORM ActiveRecord
+
 ## Installation
 
 Put this in your Gemfile.
@@ -34,9 +41,26 @@ This will mount the following routes.
     GET /jobs
     GET /jobs/:id
 
-## Authenticating
+## Authentication
 
 TODO
+
+## Developing Locally
+
+After you've cloned the repository, run bundler.
+
+    bundle install
+
+Make sure the specs are passing.
+
+    rake
+
+Run the dummy rails app.
+
+    cd spec/dummy
+    rails s
+
+Go to http://localhost:3000.
 
 ## License
 
