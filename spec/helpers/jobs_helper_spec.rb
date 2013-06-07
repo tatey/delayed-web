@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Delayed::Web::JobsHelper do
-  let(:executing_job) { OpenStruct.new locked_at: Time.current, locked_by: 'host.local' }
-  let(:failed_job)    { OpenStruct.new locked_at: nil, locked_by: nil, attempts: 1, last_error: 'RuntimeError: RuntimeError' }
-  let(:queued_job)    { OpenStruct.new locked_at: nil, locked_by: nil, attempts: 0, last_error: '' }
+  let(:executing_job) { double 'Delayed::Job', locked_at: Time.current, locked_by: 'host.local' }
+  let(:failed_job)    { double 'Delayed::Job', locked_at: nil, locked_by: nil, attempts: 1, last_error: 'RuntimeError: RuntimeError' }
+  let(:queued_job)    { double 'Delayed::Job', locked_at: nil, locked_by: nil, attempts: 0, last_error: '' }
 
   describe '#status_text' do
     it 'is executing' do
