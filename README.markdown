@@ -6,8 +6,7 @@ Simple web interface for exposing the [Delayed::Job](https://github.com/collecti
 
 * Ruby 1.9.2, 1.9.3 or 2.0.0
 * Rails 3.2.x or 4.0.x
-* Delayed Job 3.0.x, 4.0.x
-* ORM ActiveRecord
+* Delayed Job 3.0.x, 4.0.x (ActiveRecord backend)
 
 ## Installation
 
@@ -31,6 +30,7 @@ and mount the engine at `/jobs` in `config/routes.rb`.
 The installation script will automatically add routes into your app,
 like this.
 
+    # config/routes.rb
     Rails.application.routes.draw do
       mount Delayed::Dashboard::Engine, at: '/jobs'
     end
@@ -44,6 +44,17 @@ This will mount the following routes.
 ## Authentication
 
 TODO
+
+## Backend
+
+The installation script will automatically set the backend you're using for
+Delayed::Job, like this.
+
+    # config/initializers/delayed_dashboard.rb
+    Delayed::Dashboard::Job.backend = 'active_record'.
+
+Currently, ActiveRecord is the only supported backend. We would welcome a
+pull request for Monogoid.
 
 ## Developing Locally
 

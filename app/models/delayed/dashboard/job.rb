@@ -5,12 +5,23 @@ module Delayed
     class Job
       extend SingleForwardable
 
-      def_delegator :model, :all
-      def_delegator :model, :find
+      def_delegator :backend, :all
+      def_delegator :backend, :find
 
-      def self.model new_model = nil
-        @model = new_model if new_model
-        @model
+      # Set the backend you're using for Delayed::Job.
+      #
+      # Example:
+      #   Delayed::Dashboard::Job.backend = :active_record
+      #
+      # @param new_backend [String] "active_record" or "double".
+      #
+      # @return [void]
+      def self.backend= new_backend
+        @backend = "Delayed::Dashboard::Job::#{new_backend.classify}".constantize
+      end
+
+      def self.backend
+        @backend
       end
     end
   end

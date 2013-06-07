@@ -1,2 +1,3 @@
-# Set ActiveRecord as our Delayed Job backend.
-Delayed::Dashboard::Job.model Delayed::Dashboard::Job::ActiveRecord
+# Tell Delayed::Dashboard that we're using ActiveRecord as the backend
+# for Delayed::Job.
+Delayed::Dashboard::Job.backend = 'active_record'

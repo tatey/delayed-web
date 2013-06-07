@@ -1,1 +1,1 @@
-Delayed::Dashboard::Job.model Delayed::Dashboard::Job::Double
+Delayed::Dashboard::Job.backend = 'double'
