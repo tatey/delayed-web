@@ -6,7 +6,7 @@ module Delayed
       end
 
       def self.all
-        Delayed::Job.scoped
+        Delayed::Job.limit 100
       end
     end
   end
