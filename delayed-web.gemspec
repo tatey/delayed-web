@@ -10,8 +10,9 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.com/thebestday/delayed-web'
   s.summary     = 'A rails engine that provides a simple web interface for exposing the Delayed::Job queue.'
   s.description = 'A rails engine that provides a simple web interface for exposing the Delayed::Job queue.'
+  s.license     = 'MIT'
 
-  s.files      = Dir['{app,config,lib}/**/*', 'LICENSE', 'Rakefile', 'README.rdoc']
+  s.files      = Dir['{app,config,lib,vendor}/**/*', 'CONTRIBUTING.md', 'LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rails', '>= 3.2.13', '<= 4.0.0.rc1'

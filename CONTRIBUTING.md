@@ -1,4 +1,4 @@
-# How to Contribute
+# Contributing
 
 If you want to contribute an enhancement or a fix:
 
