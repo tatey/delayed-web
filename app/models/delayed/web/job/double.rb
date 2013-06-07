@@ -26,7 +26,7 @@ module Delayed
       end
 
       def self.find *args
-        all.sample
+        build_failed
       end
 
       def self.all
