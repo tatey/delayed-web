@@ -2,6 +2,8 @@
 
 Simple web interface for exposing the [Delayed::Job](https://github.com/collectiveidea/delayed_job) queue.
 
+![](http://f.cl.ly/items/362P380d030k2W2j2V2l/Delayed%20Job%20Web.png)
+
 ## Requirements
 
 * Ruby 1.9.2, 1.9.3 or 2.0.0
