@@ -1,6 +1,6 @@
 # Delayed::Dashboard
 
-Simple web interface for exposing the Delayed Job queue.
+Simple web interface for exposing the [Delayed::Job](https://github.com/collectiveidea/delayed_job) queue.
 
 ## Installation
 
