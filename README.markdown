@@ -46,7 +46,23 @@ This will mount the following routes.
 
 ## Authentication
 
-TODO
+Out of the box Delayed::Web doesn't make any assumptions about
+authentication. It's possible to take advantage of rails routing
+constraints or rack middleware.
+
+An example using Devise's `authenticated` constraint.
+
+    # config/routes.rb
+    authenticated :user, -> user { user.admin? } do
+      mount Delayed::Web::Engine, at: '/jobs'
+    end
+
+An example using Rack::Auth::Basic.
+
+    # config/routes.rb
+    Delayed::Web::Engine.middleware.use Rack::Auth::Basic do |username, password|
+      username == ENV['USERNAME'] && password == ENV['PASSWORD']
+    end
 
 ## Backend
 
@@ -57,7 +73,7 @@ Delayed::Job, like this.
     Delayed::Web::Job.backend = 'active_record'
 
 Currently, ActiveRecord is the only supported backend. We would welcome a
-pull request for Monogoid.
+pull request for Monogoid. See `Delayed::Web::Job` to get started.
 
 ## Developing Locally
 
