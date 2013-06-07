@@ -16,5 +16,5 @@ RSpec.configure do |config|
 
   # This will include the routing helpers in the specs so that we can use
   # jobs_path.
-  config.include Delayed::Dashboard::Engine.routes.url_helpers
+  config.include Delayed::Web::Engine.routes.url_helpers
 end

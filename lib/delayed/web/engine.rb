@@ -1,7 +1,7 @@
 module Delayed
-  module Dashboard
+  module Web
     class Engine < Rails::Engine
-      isolate_namespace Delayed::Dashboard
+      isolate_namespace Delayed::Web
     end
   end
 end

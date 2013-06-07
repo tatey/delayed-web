@@ -1,5 +1,5 @@
 module Delayed
-  module Dashboard
+  module Web
     class ApplicationController < ActionController::Base
     protected
 

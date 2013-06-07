@@ -1,7 +1,7 @@
 require 'forwardable'
 
 module Delayed
-  module Dashboard
+  module Web
     class Job
       extend SingleForwardable
 
@@ -11,13 +11,13 @@ module Delayed
       # Set the backend you're using for Delayed::Job.
       #
       # Example:
-      #   Delayed::Dashboard::Job.backend = :active_record
+      #   Delayed::Web::Job.backend = :active_record
       #
       # @param new_backend [String] "active_record" or "double".
       #
       # @return [void]
       def self.backend= new_backend
-        @backend = "Delayed::Dashboard::Job::#{new_backend.classify}".constantize
+        @backend = "Delayed::Web::Job::#{new_backend.classify}".constantize
       end
 
       def self.backend

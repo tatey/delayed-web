@@ -1,6 +1,7 @@
-# Delayed::Dashboard
+# Delayed::Web
 
-Simple web interface for exposing the [Delayed::Job](https://github.com/collectiveidea/delayed_job) queue.
+A rails engine that provides a simple web interface for exposing the
+[Delayed::Job](https://github.com/collectiveidea/delayed_job) queue.
 
 ![](http://f.cl.ly/items/362P380d030k2W2j2V2l/Delayed%20Job%20Web.png)
 
@@ -8,13 +9,13 @@ Simple web interface for exposing the [Delayed::Job](https://github.com/collecti
 
 * Ruby 1.9.2, 1.9.3 or 2.0.0
 * Rails 3.2.x or 4.0.x
-* Delayed Job 3.0.x, 4.0.x (ActiveRecord backend)
+* Delayed::Job 3.0.x, 4.0.x (ActiveRecord backend)
 
 ## Installation
 
 Put this in your Gemfile.
 
-    gem 'delayed-dashboard', github: 'thebestday/delayed-dashboard'
+    gem 'delayed-web', github: 'thebestday/delayed-web'
 
 Run bundler.
 
@@ -22,9 +23,9 @@ Run bundler.
 
 Run the installation generator.
 
-    rails generate delayed:dashboard:install
+    rails generate delayed:web:install
 
-This will install an initializer into `config/initializers/delayed_dashboard.rb`
+This will install an initializer into `config/initializers/delayed_web.rb`
 and mount the engine at `/jobs` in `config/routes.rb`.
 
 ## Routes
@@ -34,7 +35,7 @@ like this.
 
     # config/routes.rb
     Rails.application.routes.draw do
-      mount Delayed::Dashboard::Engine, at: '/jobs'
+      mount Delayed::Web::Engine, at: '/jobs'
     end
 
 This will mount the following routes.
@@ -52,8 +53,8 @@ TODO
 The installation script will automatically set the backend you're using for
 Delayed::Job, like this.
 
-    # config/initializers/delayed_dashboard.rb
-    Delayed::Dashboard::Job.backend = 'active_record'.
+    # config/initializers/delayed_web.rb
+    Delayed::Web::Job.backend = 'active_record'.
 
 Currently, ActiveRecord is the only supported backend. We would welcome a
 pull request for Monogoid.

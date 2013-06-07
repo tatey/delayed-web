@@ -1,4 +1,4 @@
-module Delayed::Dashboard::JobsHelper
+module Delayed::Web::JobsHelper
   def status_text job
     case
     when job.locked_at && job.locked_by

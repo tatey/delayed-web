@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'User visiting dashboard' do
+describe 'User visiting jobs' do
   it 'sees a list of jobs' do
     get jobs_path
 

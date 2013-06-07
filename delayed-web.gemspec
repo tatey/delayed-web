@@ -1,15 +1,15 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'delayed/dashboard/version'
+require 'delayed/web/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'delayed-dashboard'
-  s.version     = Delayed::Dashboard::VERSION
+  s.name        = 'delayed-web'
+  s.version     = Delayed::Web::VERSION
   s.authors     = ['Tate Johnson']
   s.email       = ['tate@thebestday.com']
-  s.homepage    = 'http://github.com/thebestday/delayed-dashboard'
-  s.summary     = 'Simple web interface for exposing the Delayed Job queue.'
-  s.description = 'Simple web interface for exposing the Delayed Job queue.'
+  s.homepage    = 'http://github.com/thebestday/delayed-web'
+  s.summary     = 'A rails engine that provides a simple web interface for exposing the Delayed::Job queue.'
+  s.description = 'A rails engine that provides a simple web interface for exposing the Delayed::Job queue.'
 
   s.files      = Dir['{app,config,lib}/**/*', 'LICENSE', 'Rakefile', 'README.rdoc']
   s.test_files = Dir['spec/**/*']

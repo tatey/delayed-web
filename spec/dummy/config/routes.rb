@@ -1,3 +1,3 @@
 Dummy::Application.routes.draw do
-  mount Delayed::Dashboard::Engine, at: '/'
+  mount Delayed::Web::Engine, at: '/'
 end

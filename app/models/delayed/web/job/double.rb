@@ -1,5 +1,5 @@
 module Delayed
-  module Dashboard
+  module Web
     class Job::Double
       attr_accessor :id
       attr_accessor :created_at

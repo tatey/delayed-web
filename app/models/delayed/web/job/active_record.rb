@@ -1,5 +1,5 @@
 module Delayed
-  module Dashboard
+  module Web
     class Job::ActiveRecord
       def self.find *args
         Delayed::Job.find *args

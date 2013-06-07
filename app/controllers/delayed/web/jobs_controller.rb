@@ -1,15 +1,15 @@
 module Delayed
-  module Dashboard
+  module Web
     class JobsController < ApplicationController
     private
 
       def job
-        @job ||= Delayed::Dashboard::Job.find params[:id]
+        @job ||= Delayed::Web::Job.find params[:id]
       end
       helper_method :job
 
       def jobs
-        @jobs ||= Delayed::Dashboard::Job.all
+        @jobs ||= Delayed::Web::Job.all
       end
       helper_method :jobs
     end
