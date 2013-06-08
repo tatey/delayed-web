@@ -6,7 +6,7 @@ module Delayed
       end
 
       def self.all
-        Delayed::Job.limit 100
+        Delayed::Job.order('id DESC').limit(100)
       end
     end
   end
