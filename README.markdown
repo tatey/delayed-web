@@ -1,4 +1,4 @@
-# Delayed::Web
+# Delayed::Web for Delayed::Job
 
 [![Build Status](https://travis-ci.org/thebestday/delayed-web.png?branch=master)](https://travis-ci.org/thebestday/delayed-web)
 [![Code Climate](https://codeclimate.com/github/thebestday/delayed-web.png)](https://codeclimate.com/github/thebestday/delayed-web)
