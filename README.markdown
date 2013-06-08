@@ -73,7 +73,9 @@ The installation script will automatically set the backend you're using for
 Delayed::Job, like this.
 
     # config/initializers/delayed_web.rb
-    Delayed::Web::Job.backend = 'active_record'
+    Rails.application.config.to_prepare do
+      Delayed::Web::Job.backend = 'active_record'
+    end
 
 Currently, ActiveRecord is the only supported backend. We would welcome a
 pull request for Monogoid. See `Delayed::Web::Job` to get started.
