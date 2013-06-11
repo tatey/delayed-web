@@ -6,12 +6,11 @@
   </head>
   <body>
     <div class="container">
-      <% if flash.any? %>
-        <div class="alert alert-success">
-          <%= flash[:notice] %>
+      <% flash.each do |type, message| %>
+        <div class="alert <%= flash_dom_class(type) %>">
+          <%= flash[type] %>
         </div>
       <% end %>
-
       <%= yield %>
     </div>
   </body>
