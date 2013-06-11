@@ -6,6 +6,12 @@
   </head>
   <body>
     <div class="container">
+      <% if flash.any? %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
