@@ -31,6 +31,14 @@ Run the installation generator.
 This will install an initializer into `config/initializers/delayed_web.rb`
 and mount the engine at `/jobs` in `config/routes.rb`.
 
+### Asset Pipeline (Optional)
+
+Add the engine's assets to your whitelist of precompiled assets.
+
+    # config/application.rb
+    config.assets.enabled = true
+    config.assets.precompile << 'delayed/web/application.css'
+
 ## Routes
 
 The installation script will automatically add routes into your app,
