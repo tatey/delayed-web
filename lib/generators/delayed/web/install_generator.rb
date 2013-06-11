@@ -4,7 +4,7 @@ module Delayed
       source_root File.expand_path('../templates', __FILE__)
       desc 'Installs Delayed::Web'
 
-      def installe
+      def install
         template 'initializer.rb', 'config/initializers/delayed_web.rb'
         route 'mount Delayed::Web::Engine, at: \'/jobs\''
       end
