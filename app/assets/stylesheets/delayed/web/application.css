@@ -1,3 +1,12 @@
 /*
  *= require delayed/web/bootstrap
  */
+
+/* Remove bootstrap form margins on rails button_to.
+ *
+ * Example:
+ *   <%= button_to ... form_class: 'btn-rails' %>
+ */
+.btn-rails {
+  margin: 0;
+}

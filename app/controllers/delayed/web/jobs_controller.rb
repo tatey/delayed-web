@@ -1,6 +1,11 @@
 module Delayed
   module Web
     class JobsController < ApplicationController
+      def destroy
+        job.destroy
+        redirect_to jobs_path, notice: "Job destroyed."
+      end
+
     private
 
       def job

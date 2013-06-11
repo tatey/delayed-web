@@ -25,6 +25,9 @@ module Delayed
         id
       end
 
+      def destroy
+      end
+
       def self.find *args
         build_failed
       end
