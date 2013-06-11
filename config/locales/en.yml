@@ -1,0 +1,6 @@
+en:
+  delayed/web:
+    flashes:
+      jobs:
+        destroyed:
+          notice: 'Job destroyed'

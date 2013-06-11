@@ -3,7 +3,7 @@ module Delayed
     class JobsController < ApplicationController
       def destroy
         job.destroy
-        redirect_to jobs_path, notice: "Job destroyed."
+        redirect_to jobs_path, notice: t(:notice, scope: 'delayed/web.flashes.jobs.destroyed')
       end
 
     private

@@ -30,7 +30,7 @@
           <td><%= job.run_at %></td>
           <td><%= job.attempts %></td>
           <td><%= link_to_if job.last_error.present?, truncate(job.last_error), job_path(job) %></td>
-          <td><%= button_to 'delete', job_path(job), method: :delete, class: 'btn btn-danger btn-mini', form_class: 'btn-rails' %></td>
+          <td><%= button_to 'Delete', job_path(job), method: :delete, class: 'btn btn-danger btn-mini', form_class: 'btn-rails' %></td>
         </tr>
       <% end %>
     <% else %>
