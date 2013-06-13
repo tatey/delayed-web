@@ -12,8 +12,8 @@
       <th>Created At</th>
       <th>Run At</th>
       <th>Attempts</th>
-      <th>Last Error</th>
-      <th>Actions</th>
+      <th style="width: 190px;">Last Error</th>
+      <th style="width: 115px;">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -32,10 +32,10 @@
           <td><%= link_to_if job.last_error.present?, truncate(job.last_error), job_path(job) %></td>
           <td>
             <% if job.can_queue? %>
-              <%= button_to 'Run Next', queue_job_path(job), method: :put, class: 'btn btn-mini', form_class: 'btn-rails' %>
+              <%= button_to 'Run Next', queue_job_path(job), method: :put, class: 'btn btn-mini', form_class: 'btn-rails pull-left' %>
             <% end %>
             <% if job.can_destroy? %>
-              <%= button_to 'Delete', job_path(job), method: :delete, class: 'btn btn-danger btn-mini', form_class: 'btn-rails' %>
+              <%= button_to 'Delete', job_path(job), method: :delete, class: 'btn btn-danger btn-mini', form_class: 'btn-rails pull-right' %>
             <% end %>
           </td>
         </tr>

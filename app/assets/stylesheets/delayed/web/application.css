@@ -10,3 +10,26 @@
 .btn-rails {
   margin: 0;
 }
+
+.page-header {
+  position: relative;
+}
+
+/* Positions a button group to the right of the header.
+ */
+.page-header .btn-group {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.page-header .btn-group .btn {
+  margin-left: 10px;
+}
+
+/* Whitespace between the alert and top of the page.
+ */
+.alert {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

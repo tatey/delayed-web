@@ -4,12 +4,14 @@
   <h1>
     <%= link_to 'Jobs', jobs_path %> / <%= title %>
   </h1>
-  <% if job.can_queue? %>
-    <%= button_to 'Run Next', queue_job_path(job), method: :put, class: 'btn', form_class: 'btn-rails pull-right' %>
-  <% end %>
-  <% if job.can_destroy? %>
-    <%= button_to 'Delete', job_path(job), method: :delete, class: 'btn btn-danger', form_class: 'btn-rails pull-right' %>
-  <% end %>
+  <div class="btn-group">
+    <% if job.can_queue? %>
+      <%= button_to 'Run Next', queue_job_path(job), method: :put, class: 'btn', form_class: 'btn-rails pull-left' %>
+    <% end %>
+    <% if job.can_destroy? %>
+      <%= button_to 'Delete', job_path(job), method: :delete, class: 'btn btn-danger', form_class: 'btn-rails pull-right' %>
+    <% end %>
+  </div>
 </div>
 
 <h2>Last Error</h2>
