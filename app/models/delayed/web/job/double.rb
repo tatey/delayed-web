@@ -25,15 +25,26 @@ module Delayed
         id
       end
 
+      def queue!
+        true
+      end
+
       def destroy
+        self
       end
 
       def self.find *args
-        build_failed
+        decorate build_failed
       end
 
       def self.all
-        [build_executing, build_failed, build_queued]
+        [build_executing, build_failed, build_queued].map do |job|
+          decorate job
+        end
+      end
+
+      def self.decorate job
+        StatusDecorator.new job
       end
 
       def self.build_executing

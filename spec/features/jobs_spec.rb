@@ -14,4 +14,11 @@ feature 'Jobs' do
 
     expect(page).to have_text('Jobs')
   end
+
+  scenario 'User queues a job' do
+    visit '/jobs/2'
+    click_button 'Run Next'
+
+    expect(page).to have_text('Jobs')
+  end
 end
