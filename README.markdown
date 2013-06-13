@@ -105,6 +105,9 @@ Run the dummy rails app.
 
 Go to http://localhost:3000.
 
+The dummy rails app uses `Delayed::Web::Job::Double` as its backend.
+It is an in-memory double of a real Delayed::Job.
+
 ## License
 
 Copyright © 2013 TheBestDay Pty. Ltd. Released under the MIT license. See LICENSE.
