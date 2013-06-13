@@ -6,7 +6,7 @@
 A rails engine that provides a simple web interface for exposing the
 [Delayed::Job](https://github.com/collectiveidea/delayed_job) queue.
 
-![](http://f.cl.ly/items/362P380d030k2W2j2V2l/Delayed%20Job%20Web.png)
+![](http://f.cl.ly/items/1j2m2g223s3q33140S3H/Screen%20Shot%202013-06-13%20at%2011.47.57%20PM.png)
 
 ## Requirements
 
