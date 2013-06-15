@@ -12,6 +12,8 @@ module Delayed
         end
       end
 
+    private
+
       def assets?
         Rails::Generators.options.fetch(:rails, {}).fetch(:assets, false)
       end
