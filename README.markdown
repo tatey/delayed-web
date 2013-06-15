@@ -84,11 +84,15 @@ pull request for Monogoid. See `Delayed::Web::Job` to get started.
 
 ## Asset Pipeline
 
-Add the engine's assets to your whitelist of precompiled assets.
+The installation script will automatically add the engine's assets to your
+application's list of precompiled assets.
 
     # config/application.rb
     config.assets.enabled = true
     config.assets.precompile << 'delayed/web/application.css'
+
+This step is skipped if your project is configured not to use the asset
+pipeline.
 
 ## Developing Locally
 
