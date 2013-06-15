@@ -28,16 +28,10 @@ Run the installation generator.
 
     rails generate delayed:web:install
 
-This will install an initializer into `config/initializers/delayed_web.rb`
-and mount the engine at `/jobs` in `config/routes.rb`.
-
-### Asset Pipeline (Optional)
-
-Add the engine's assets to your whitelist of precompiled assets.
-
-    # config/application.rb
-    config.assets.enabled = true
-    config.assets.precompile << 'delayed/web/application.css'
+This will install an initializer into `config/initializers/delayed_web.rb`,
+mount the engine at `/jobs` in `config/routes.rb` and add the stylesheets
+to the list of precomiled assets in `application.rb` (If assets are
+enabled).
 
 ## Routes
 
@@ -87,6 +81,14 @@ Delayed::Job, like this.
 
 Currently, ActiveRecord is the only supported backend. We would welcome a
 pull request for Monogoid. See `Delayed::Web::Job` to get started.
+
+## Asset Pipeline
+
+Add the engine's assets to your whitelist of precompiled assets.
+
+    # config/application.rb
+    config.assets.enabled = true
+    config.assets.precompile << 'delayed/web/application.css'
 
 ## Developing Locally
 

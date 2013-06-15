@@ -7,6 +7,13 @@ module Delayed
       def install
         template 'initializer.rb', 'config/initializers/delayed_web.rb'
         route 'mount Delayed::Web::Engine, at: \'/jobs\''
+        if assets?
+          application "config.assets.precompile << 'delayed/web/application.css'"
+        end
+      end
+
+      def assets?
+        Rails::Generators.options.fetch(:rails, {}).fetch(:assets, false)
       end
     end
   end
