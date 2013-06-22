@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Delayed::Web::StatusDecorator do
-  let(:executing_job) { Delayed::Web::StatusDecorator.new double('Delayed::Job', locked_at: Time.current, locked_by: 'host.local') }
-  let(:failed_job)    { Delayed::Web::StatusDecorator.new double('Delayed::Job', locked_at: nil, locked_by: nil, attempts: 1, last_error: 'RuntimeError: RuntimeError') }
-  let(:queued_job)    { Delayed::Web::StatusDecorator.new double('Delayed::Job', locked_at: nil, locked_by: nil, attempts: 0, last_error: '') }
+  let(:executing_job) { Delayed::Web::StatusDecorator.new double('Delayed::Job', locked_at: Time.current, locked_by: 'host.local', failed_at: nil) }
+  let(:failed_job)    { Delayed::Web::StatusDecorator.new double('Delayed::Job', locked_at: nil, locked_by: nil, failed_at: Time.current, last_error: 'RuntimeError: RuntimeError') }
+  let(:queued_job)    { Delayed::Web::StatusDecorator.new double('Delayed::Job', locked_at: nil, locked_by: nil, failed_at: nil, last_error: '') }
 
   describe '#status' do
     it 'is executing' do

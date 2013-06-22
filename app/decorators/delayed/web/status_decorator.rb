@@ -3,10 +3,10 @@ module Delayed
     class StatusDecorator < SimpleDelegator
       def status
         case
+        when failed_at
+          'failed'
         when locked_at && locked_by
           'executing'
-        when attempts > 0 && last_error.present?
-          'failed'
         else
           'queued'
         end
