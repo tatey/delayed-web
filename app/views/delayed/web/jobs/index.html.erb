@@ -20,7 +20,7 @@
     <% if jobs.any? %>
       <% jobs.each do |job| %>
         <tr>
-          <td>#<%= job.id %></td>
+          <td><%= link_to "##{job.id}", job_path(job) %></td>
           <td>
             <span class="<%= status_dom_class(job.status) %>">
               <%= job.status.capitalize %>
