@@ -9,16 +9,23 @@ feature 'Jobs' do
   end
 
   scenario 'User deletes a job' do
-    visit '/jobs/2'
+    visit '/default/jobs/2'
     click_button 'Delete'
 
     expect(page).to have_text('Jobs')
   end
 
   scenario 'User queues a job' do
-    visit '/jobs/2'
+    visit '/default/jobs/2'
     click_button 'Run Next'
 
     expect(page).to have_text('Jobs')
+  end
+
+  scenario 'User can filter jobs by queue' do
+    visit '/jobs'
+    click_link 'default'
+
+    expect(page).to have_text('Job #1')
   end
 end

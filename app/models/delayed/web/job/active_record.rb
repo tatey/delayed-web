@@ -5,8 +5,11 @@ module Delayed
         decorate Delayed::Job.find(*args)
       end
 
-      def self.all
+      def self.by_queue name
         jobs = Delayed::Job.order('id DESC').limit(100)
+        jobs = jobs.where(queue: name) if name.present?
+        jobs
+
         Enumerator.new do |enumerator|
           jobs.each do |job|
             enumerator.yield decorate(job)

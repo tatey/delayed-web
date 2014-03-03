@@ -5,7 +5,7 @@ module Delayed
     class Job
       extend SingleForwardable
 
-      def_delegator :backend, :all
+      def_delegator :backend, :by_queue
       def_delegator :backend, :find
 
       # Set the backend you're using for Delayed::Job.
@@ -22,6 +22,10 @@ module Delayed
 
       def self.backend
         @backend
+      end
+
+      def self.queues
+        @queues ||= []
       end
     end
   end

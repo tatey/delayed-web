@@ -29,7 +29,7 @@ module Delayed
       helper_method :job
 
       def jobs
-        @jobs ||= Delayed::Web::Job.all
+        @jobs ||= Delayed::Web::Job.by_queue params[:queue]
       end
       helper_method :jobs
     end

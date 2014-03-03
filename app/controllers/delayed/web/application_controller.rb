@@ -1,6 +1,11 @@
 module Delayed
   module Web
     class ApplicationController < ActionController::Base
+      def queues
+        Delayed::Web::Job.queues
+      end
+      helper_method :queues
+
     protected
 
       def title new_title = nil
