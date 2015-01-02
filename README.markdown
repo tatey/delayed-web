@@ -11,7 +11,7 @@ A rails engine that provides a simple web interface for exposing the
 ## Requirements
 
 * Ruby 1.9.3 or 2.0.0
-* Rails 3.2.x or 4.0.x
+* Rails 3.2.x, 4.0.x, 4.1.x or 4.2.x
 * Delayed::Job 3.0.x, 4.0.x (ActiveRecord backend)
 
 ## Installation
