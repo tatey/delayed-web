@@ -12,7 +12,8 @@ A rails engine that provides a simple web interface for exposing the
 
 * Ruby 1.9.3, 2.0.0, 2.1.0 or 2.2.0
 * Rails 3.2.x, 4.0.x, 4.1.x or 4.2.x
-* Delayed::Job 3.0.x, 4.0.x (ActiveRecord backend)
+* Delayed::Job 3.0.x, 4.0.x
+* ActiveRecord or Mongoid
 
 ## Installation
 
@@ -79,8 +80,8 @@ Delayed::Job, like this.
       Delayed::Web::Job.backend = 'active_record'
     end
 
-Currently, ActiveRecord is the only supported backend. We would welcome a
-pull request for Monogoid. See `Delayed::Web::Job` to get started.
+Currently supported backends are `'active_record'` and `mongoid'`. Patches
+are always welcome.
 
 ## Asset Pipeline
 
@@ -114,6 +115,14 @@ Go to http://localhost:3000.
 The dummy rails app uses `Delayed::Web::Job::Double` as its backend.
 It is an in-memory double of a real Delayed::Job.
 
+## Special Thanks
+
+We're grateful for all our [contributors](https://github.com/thebestday/delayed-web/graphs/contributors),
+but we're especially grateful for contributions by the following people:
+
+* [@coop](https://github.com/coop)
+* [@eltiare](https://github.com/eltiare)
+
 ## License
 
-Copyright © 2013 TheBestDay Pty. Ltd. Released under the MIT license. See LICENSE.
+Copyright © 2013-2015 TheBestDay Pty. Ltd. Released under the MIT license. See LICENSE.
