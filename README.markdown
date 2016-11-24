@@ -95,6 +95,24 @@ application's list of precompiled assets.
 This step is skipped if your project is configured not to use the asset
 pipeline.
 
+## I18n
+
+If you want to translate flash messages, titles, sentences, ... you can set your own I18n translations to override defaults one:
+
+```yml
+en:
+  delayed/web:
+    views:
+      id: ID
+      status: Status
+      created_at: Created At
+      run_at: Run At
+      attempts: Attempts
+      last_error: Last Error
+```
+
+You can find the full list [here](https://github.com/gemsfix/delayed-web/blob/master/config/locales/en.yml).
+
 ## Developing Locally
 
 After you've cloned the repository, run bundler.
