@@ -39,10 +39,12 @@ enabled).
 The installation script will automatically add routes into your app,
 like this.
 
-    # config/routes.rb
-    Rails.application.routes.draw do
-      mount Delayed::Web::Engine, at: '/jobs'
-    end
+```ruby
+# config/routes.rb
+Rails.application.routes.draw do
+  mount Delayed::Web::Engine, at: '/jobs'
+end
+```
 
 This will mount the following routes.
 
@@ -58,27 +60,33 @@ constraints or rack middleware.
 
 An example using Devise's `authenticated` constraint.
 
-    # config/routes.rb
-    authenticated :user, -> user { user.admin? } do
-      mount Delayed::Web::Engine, at: '/jobs'
-    end
+```ruby
+# config/routes.rb
+authenticated :user, -> user { user.admin? } do
+  mount Delayed::Web::Engine, at: '/jobs'
+end
+```
 
-An example using Rack::Auth::Basic.
+An example using `Rack::Auth::Basic`.
 
-    # config/routes.rb
-    Delayed::Web::Engine.middleware.use Rack::Auth::Basic do |username, password|
-      username == ENV['USERNAME'] && password == ENV['PASSWORD']
-    end
+```ruby
+# config/routes.rb
+Delayed::Web::Engine.middleware.use Rack::Auth::Basic do |username, password|
+  username == ENV['USERNAME'] && password == ENV['PASSWORD']
+end
+```
 
 ## Backend
 
 The installation script will automatically set the backend you're using for
-Delayed::Job, like this.
+`Delayed::Job`, like this.
 
-    # config/initializers/delayed_web.rb
-    Rails.application.config.to_prepare do
-      Delayed::Web::Job.backend = 'active_record'
-    end
+```
+# config/initializers/delayed_web.rb
+Rails.application.config.to_prepare do
+  Delayed::Web::Job.backend = 'active_record'
+end
+```
 
 Currently supported backends are `'active_record'` and `mongoid'`. Patches
 are always welcome.
@@ -88,9 +96,11 @@ are always welcome.
 The installation script will automatically add the engine's assets to your
 application's list of precompiled assets.
 
-    # config/application.rb
-    config.assets.enabled = true
-    config.assets.precompile << 'delayed/web/application.css'
+```ruby
+# config/application.rb
+config.assets.enabled = true
+config.assets.precompile << 'delayed/web/application.css'
+```
 
 This step is skipped if your project is configured not to use the asset
 pipeline.
