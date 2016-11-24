@@ -16,7 +16,7 @@ fr:
       errors:
         empty: Il n'y aucune erreur
       buttons:
-        run_next: Prochaine tâche
+        run_next: Suivant
         delete: Supprimer
       statuses:
         executing: En cours

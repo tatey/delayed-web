@@ -13,7 +13,7 @@
       <th><%= t('delayed/web.views.run_at') %></th>
       <th><%= t('delayed/web.views.attempts') %></th>
       <th style="width: 190px;"><%= t('delayed/web.views.last_error') %></th>
-      <th style="width: 160px;"><%= t('delayed/web.views.actions') %></th>
+      <th style="width: 140px"><%= t('delayed/web.views.actions') %></th>
     </tr>
   </thead>
   <tbody>
@@ -38,10 +38,10 @@
           </td>
           <td>
             <% if job.can_queue? %>
-              <%= button_to t('delayed/web.views.buttons.run_next'), queue_job_path(job), method: :put, class: 'btn btn-mini', form_class: 'btn-rails pull-left' %>
+              <%= button_to t('delayed/web.views.buttons.run_next'), queue_job_path(job), method: :put, class: 'btn btn-mini btn-action', form_class: 'btn-rails pull-left', title: t('delayed/web.views.buttons.run_next') %>
             <% end %>
             <% if job.can_destroy? %>
-              <%= button_to t('delayed/web.views.buttons.delete'), job_path(job), method: :delete, class: 'btn btn-danger btn-mini', form_class: 'btn-rails pull-right' %>
+              <%= button_to t('delayed/web.views.buttons.delete'), job_path(job), method: :delete, class: 'btn btn-danger btn-mini btn-action', form_class: 'btn-rails pull-right', title: t('delayed/web.views.buttons.delete') %>
             <% end %>
           </td>
         </tr>

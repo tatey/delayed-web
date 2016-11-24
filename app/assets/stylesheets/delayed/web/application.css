@@ -33,3 +33,11 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+/* Base style to use text-overflow */
+.btn-action {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 65px !important;
+}
