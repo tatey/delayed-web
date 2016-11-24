@@ -16,6 +16,8 @@ en:
         delete: Delete
       queue:
         empty: An empty queue is a good queue.
+      errors:
+        empty: There is no error
       statuses:
         executing: Executing
         failed: Failed

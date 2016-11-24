@@ -29,7 +29,13 @@
           <td><%= l(job.created_at, format: :short) %></td>
           <td><%= l(job.run_at, format: :short) %></td>
           <td><%= job.attempts %></td>
-          <td><%= link_to_if job.last_error.present?, truncate(job.last_error), job_path(job) %></td>
+          <td>
+            <% if job.last_error.present? %>
+              <%= link_to truncate(job.last_error), job_path(job) %>
+            <% else %>
+              <span class="label label-success"><%= t('delayed/web.views.errors.empty') %></span>
+            <% end %>
+          </td>
           <td>
             <% if job.can_queue? %>
               <%= button_to t('delayed/web.views.buttons.run_next'), queue_job_path(job), method: :put, class: 'btn btn-mini', form_class: 'btn-rails pull-left' %>

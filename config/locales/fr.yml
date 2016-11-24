@@ -13,6 +13,8 @@ fr:
       actions: Actions
       queue:
         empty: Une file d'attente vide est une bonne file d'attente.
+      errors:
+        empty: Il n'y aucune erreur
       buttons:
         run_next: Prochaine tâche
         delete: Supprimer

@@ -14,9 +14,11 @@
   </div>
 </div>
 
-<% unless job.last_error.blank? %>
-  <h2><%= t('delayed/web.views.last_error') %></h2>
+<h2><%= t('delayed/web.views.last_error') %></h2>
+<% if job.last_error.present? %>
   <pre><%= job.last_error %></pre>
+<% else %>
+  <span class="label label-success"><%= t('delayed/web.views.errors.empty') %></span>
 <% end %>
 
 <h2><%= t('delayed/web.views.handler') %></h2>
