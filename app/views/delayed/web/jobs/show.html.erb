@@ -14,8 +14,10 @@
   </div>
 </div>
 
-<h2><%= t('delayed/web.views.last_error') %></h2>
-<pre><%= job.last_error %></pre>
+<% unless job.last_error.blank? %>
+  <h2><%= t('delayed/web.views.last_error') %></h2>
+  <pre><%= job.last_error %></pre>
+<% end %>
 
 <h2><%= t('delayed/web.views.handler') %></h2>
 <pre><%= job.handler %></pre>
