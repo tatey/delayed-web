@@ -21,29 +21,29 @@ describe Delayed::Web::StatusDecorator do
 
   describe '#can_destroy?' do
     it 'is true when failed' do
-      expect(failed_job.can_destroy?).to be_true
+      expect(failed_job.can_destroy?).to be_truthy
     end
 
     it 'is true when queued' do
-      expect(queued_job.can_destroy?).to be_true
+      expect(queued_job.can_destroy?).to be_truthy
     end
 
     it 'is false when executing' do
-      expect(executing_job.can_destroy?).to be_false
+      expect(executing_job.can_destroy?).to be_falsy
     end
   end
 
   describe '#can_queue?' do
     it 'is true when failed' do
-      expect(failed_job.can_queue?).to be_true
+      expect(failed_job.can_queue?).to be_truthy
     end
 
     it 'is true when queued' do
-      expect(queued_job.can_queue?).to be_true
+      expect(queued_job.can_queue?).to be_truthy
     end
 
     it 'is false when executing' do
-      expect(executing_job.can_queue?).to be_false
+      expect(executing_job.can_queue?).to be_falsy
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Delayed::Web::JobsHelper do
+describe Delayed::Web::JobsHelper, type: :helper do
   describe '#status_dom_class' do
     it 'is badge warning' do
       dom_class = helper.status_dom_class 'executing'
