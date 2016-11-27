@@ -1,6 +1,5 @@
 # Delayed::Web for Delayed::Job
 
-[![GitHub release](https://img.shields.io/github/release/thebestday/delayed-web.svg)](https://github.com/thebestday/delayed-web/releases/latest)
 [![Build Status](https://travis-ci.org/thebestday/delayed-web.png?branch=master)](https://travis-ci.org/thebestday/delayed-web)
 [![Code Climate](https://codeclimate.com/github/thebestday/delayed-web.png)](https://codeclimate.com/github/thebestday/delayed-web)
 
