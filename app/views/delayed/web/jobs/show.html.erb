@@ -14,11 +14,16 @@
   </div>
 </div>
 
+<h2><%= t('delayed/web.views.status') %></h2>
+<p class="<%= status_dom_class(job.status) %>">
+  <%= t(job.status, scope: 'delayed/web.views.statuses').capitalize %>
+</p>
+
 <h2><%= t('delayed/web.views.last_error') %></h2>
 <% if job.last_error.present? %>
   <pre><%= job.last_error %></pre>
 <% else %>
-  <span class="label label-success"><%= t('delayed/web.views.errors.empty') %></span>
+  <p class="label label-success"><%= t('delayed/web.views.errors.empty') %></p>
 <% end %>
 
 <h2><%= t('delayed/web.views.handler') %></h2>
