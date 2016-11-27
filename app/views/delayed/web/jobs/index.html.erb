@@ -41,7 +41,7 @@
               <%= button_to t('delayed/web.views.buttons.run_next'), queue_job_path(job), method: :put, class: 'btn btn-mini btn-action', form_class: 'btn-rails pull-left', title: t('delayed/web.views.buttons.run_next') %>
             <% end %>
             <% if job.can_destroy? %>
-              <%= button_to t('delayed/web.views.buttons.delete'), job_path(job), method: :delete, class: 'btn btn-danger btn-mini btn-action', form_class: 'btn-rails pull-right', title: t('delayed/web.views.buttons.delete') %>
+              <%= button_to t('delayed/web.views.buttons.delete'), job_path(job), method: :delete, class: 'btn btn-danger btn-mini btn-action', form_class: 'btn-rails pull-right', title: t('delayed/web.views.buttons.delete'), onclick: "return confirm('#{t('delayed/web.views.confirm.delete')}')" %>
             <% end %>
           </td>
         </tr>
