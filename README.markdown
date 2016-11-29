@@ -148,9 +148,10 @@ It is an in-memory double of a real Delayed::Job.
 We're grateful for all our [contributors](https://github.com/thebestday/delayed-web/graphs/contributors),
 but we're especially grateful for contributions by the following people:
 
+* [@anthony-robin](https://github.com/anthony-robin)
 * [@coop](https://github.com/coop)
 * [@eltiare](https://github.com/eltiare)
 
 ## License
 
-Copyright © 2013-2015 TheBestDay Pty. Ltd. Released under the MIT license. See LICENSE.
+Copyright © 2013-2016 TheBestDay Pty. Ltd. Released under the MIT license. See LICENSE.
