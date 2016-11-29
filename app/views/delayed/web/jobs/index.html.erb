@@ -1,4 +1,4 @@
-<% title 'Jobs' %>
+<% title t('delayed/web.views.jobs') %>
 
 <div class="page-header">
   <h1><%= title %></h1>
@@ -7,13 +7,13 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Status</th>
-      <th>Created At</th>
-      <th>Run At</th>
-      <th>Attempts</th>
-      <th style="width: 190px;">Last Error</th>
-      <th style="width: 115px;">Actions</th>
+      <th><%= t('delayed/web.views.id') %></th>
+      <th><%= t('delayed/web.views.status') %></th>
+      <th><%= t('delayed/web.views.created_at') %></th>
+      <th><%= t('delayed/web.views.run_at') %></th>
+      <th><%= t('delayed/web.views.attempts') %></th>
+      <th style="width: 190px;"><%= t('delayed/web.views.last_error') %></th>
+      <th style="width: 140px"><%= t('delayed/web.views.actions') %></th>
     </tr>
   </thead>
   <tbody>
@@ -23,19 +23,25 @@
           <td><%= link_to "##{job.id}", job_path(job) %></td>
           <td>
             <span class="<%= status_dom_class(job.status) %>">
-              <%= job.status.capitalize %>
+              <%= t(job.status, scope: 'delayed/web.views.statuses').capitalize %>
             </span>
           </td>
-          <td><%= job.created_at %></td>
-          <td><%= job.run_at %></td>
+          <td><%= l(job.created_at, format: :short) %></td>
+          <td><%= l(job.run_at, format: :short) %></td>
           <td><%= job.attempts %></td>
-          <td><%= link_to_if job.last_error.present?, truncate(job.last_error), job_path(job) %></td>
+          <td>
+            <% if job.last_error.present? %>
+              <%= link_to truncate(job.last_error), job_path(job) %>
+            <% else %>
+              <span class="label label-success"><%= t('delayed/web.views.errors.empty') %></span>
+            <% end %>
+          </td>
           <td>
             <% if job.can_queue? %>
-              <%= button_to 'Run Next', queue_job_path(job), method: :put, class: 'btn btn-mini', form_class: 'btn-rails pull-left' %>
+              <%= button_to t('delayed/web.views.buttons.run_next'), queue_job_path(job), method: :put, class: 'btn btn-mini btn-action', form_class: 'btn-rails pull-left', title: t('delayed/web.views.buttons.run_next') %>
             <% end %>
             <% if job.can_destroy? %>
-              <%= button_to 'Delete', job_path(job), method: :delete, class: 'btn btn-danger btn-mini', form_class: 'btn-rails pull-right' %>
+              <%= button_to t('delayed/web.views.buttons.delete'), job_path(job), method: :delete, class: 'btn btn-danger btn-mini btn-action', form_class: 'btn-rails pull-right', title: t('delayed/web.views.buttons.delete'), onclick: "return confirm('#{t('delayed/web.views.confirm.delete')}')" %>
             <% end %>
           </td>
         </tr>
@@ -43,7 +49,7 @@
     <% else %>
       <tr>
         <td colspan="7">
-          An empty queue is a good queue.
+          <%= t('delayed/web.views.queue.empty') %>
         </td>
       </tr>
     <% end %>

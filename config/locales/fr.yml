@@ -1,0 +1,38 @@
+fr:
+  delayed/web:
+    views:
+      id: ID
+      job: Tâche
+      jobs: Tâches
+      status: Statut
+      created_at: Ajouté le
+      run_at: Démarré le
+      attempts: Essais
+      last_error: Dernière Erreur
+      handler: Gestionnaire
+      actions: Actions
+      queue:
+        empty: Une file d'attente vide est une bonne file d'attente.
+      errors:
+        empty: Il n'y aucune erreur
+      buttons:
+        run_next: Suivant
+        delete: Supprimer
+      statuses:
+        executing: En cours
+        failed: Echec
+        queued: En Attente
+      confirm:
+        delete: Êtes-vous sûr de vouloir supprimer cette tâche ?
+    flashes:
+      jobs:
+        queued:
+          alert: Cette tâche ne peut pas être mise en file d'attente car elle est déjà %{status}
+          notice: Tâche placée en file d'attente
+        destroyed:
+          alert: Cette tâche ne peut pas être supprimée car elle est déjà %{status}
+          notice: Tâche supprimée
+
+  time:
+    formats:
+      short: '%d/%m/%Y à %H:%M'
