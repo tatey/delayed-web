@@ -3,7 +3,7 @@ en:
     views:
       id: ID
       job: Job
-      jobs: Jobs
+      jobs: Background Jobs
       status: Status
       created_at: Created At
       run_at: Run At
@@ -15,6 +15,7 @@ en:
         run_next: Run Next
         delete: Delete
       queue:
+        title: Queue
         empty: An empty queue is a good queue.
       errors:
         empty: There is no error
@@ -32,6 +33,8 @@ en:
         destroyed:
           alert: 'Job cannot be deleted because it is already %{status}'
           notice: 'Job destroyed'
+        executed:
+          notice: 'Job has already been executed'
 
   time:
     formats:

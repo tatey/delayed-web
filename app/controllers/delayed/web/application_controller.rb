@@ -1,6 +1,6 @@
 module Delayed
   module Web
-    class ApplicationController < ActionController::Base
+    class ApplicationController < Spree::Admin::BaseController
     protected
 
       def title new_title = nil

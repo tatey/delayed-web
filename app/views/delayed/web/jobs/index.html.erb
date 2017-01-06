@@ -9,6 +9,8 @@
     <tr>
       <th><%= t('delayed/web.views.id') %></th>
       <th><%= t('delayed/web.views.status') %></th>
+      <th><%= t('delayed/web.views.queue.title') %></th>
+      <th><%= t('delayed/web.views.handler') %></th>
       <th><%= t('delayed/web.views.created_at') %></th>
       <th><%= t('delayed/web.views.run_at') %></th>
       <th><%= t('delayed/web.views.attempts') %></th>
@@ -26,12 +28,14 @@
               <%= t(job.status, scope: 'delayed/web.views.statuses').capitalize %>
             </span>
           </td>
-          <td><%= l(job.created_at, format: :short) %></td>
-          <td><%= l(job.run_at, format: :short) %></td>
+          <td><%= job.queue %></td>
+          <td><%= truncate(job.handler, length: 400) %></td>
+          <td><%= job.created_at.strftime("%d %b %Y %H:%M") %></td>
+          <td><%= job.run_at.strftime("%d %b %Y %H:%M") %></td>
           <td><%= job.attempts %></td>
           <td>
             <% if job.last_error.present? %>
-              <%= link_to truncate(job.last_error), job_path(job) %>
+              <%= link_to truncate(job.last_error, length: 150), job_path(job) %>
             <% else %>
               <span class="label label-success"><%= t('delayed/web.views.errors.empty') %></span>
             <% end %>

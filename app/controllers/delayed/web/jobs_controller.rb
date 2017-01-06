@@ -26,7 +26,12 @@ module Delayed
       private
 
       def job
-        @job ||= Delayed::Web::Job.find params[:id]
+        begin
+          @job ||= Delayed::Web::Job.find(params[:id])
+        rescue ActiveRecord::NotFound
+          flash[:notice] = t(:notice, scope: 'delayed/web.flashes.jobs.executed')
+          redirect_to jobs_path and return
+        end
       end
       helper_method :job
 

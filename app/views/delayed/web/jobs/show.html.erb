@@ -19,6 +19,11 @@
   <%= t(job.status, scope: 'delayed/web.views.statuses').capitalize %>
 </p>
 
+<h2><%= t('delayed/web.views.queue.title') %></h2>
+<p class="<%= status_dom_class(job.status) %>">
+  <%= job.queue.capitalize %>
+</p>
+
 <h2><%= t('delayed/web.views.last_error') %></h2>
 <% if job.last_error.present? %>
   <pre><%= job.last_error %></pre>
