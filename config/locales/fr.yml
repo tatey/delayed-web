@@ -9,6 +9,7 @@ fr:
       run_at: Démarré le
       attempts: Essais
       last_error: Dernière Erreur
+      server_time: Heure du serveur
       handler: Gestionnaire
       actions: Actions
       queue:
@@ -35,4 +36,4 @@ fr:
 
   time:
     formats:
-      short: '%d/%m/%Y à %H:%M'
+      short: '%d/%m/%Y à %T'

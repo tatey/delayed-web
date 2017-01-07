@@ -2,6 +2,7 @@
 
 <div class="page-header">
   <h1><%= title %></h1>
+  <h3><%= t('delayed/web.views.server_time') %> <%= l(Time.now, format: :short)%><h3>
 </div>
 
 <table class="table table-bordered">
@@ -26,8 +27,8 @@
               <%= t(job.status, scope: 'delayed/web.views.statuses').capitalize %>
             </span>
           </td>
-          <td><%= l(job.created_at, format: :short) %></td>
-          <td><%= l(job.run_at, format: :short) %></td>
+          <td style="font-size: 12px;"><%= l(job.created_at, format: :short) %></td>
+          <td style="font-size: 12px;"><%= l(job.run_at, format: :short) %></td>
           <td><%= job.attempts %></td>
           <td>
             <% if job.last_error.present? %>

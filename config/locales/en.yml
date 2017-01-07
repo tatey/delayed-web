@@ -9,6 +9,7 @@ en:
       run_at: Run At
       attempts: Attempts
       last_error: Last Error
+      server_time: Server Time
       handler: Handler
       actions: Actions
       buttons:
@@ -35,4 +36,4 @@ en:
 
   time:
     formats:
-      short: '%d/%m/%Y at %I.%m %p'
+      short: '%d/%m/%Y at %r'
