@@ -1,7 +1,6 @@
 # Delayed::Web for Delayed::Job
 
-[![Build Status](https://travis-ci.org/thebestday/delayed-web.png?branch=master)](https://travis-ci.org/thebestday/delayed-web)
-[![Code Climate](https://codeclimate.com/github/thebestday/delayed-web.png)](https://codeclimate.com/github/thebestday/delayed-web)
+[![Build Status](https://travis-ci.org/tatey/delayed-web.svg?branch=master)](https://travis-ci.org/tatey/delayed-web)
 
 A rails engine that provides a simple web interface for exposing the
 [Delayed::Job](https://github.com/collectiveidea/delayed_job) queue.
@@ -121,7 +120,7 @@ en:
       last_error: Last Error
 ```
 
-You can find the full list [here](https://github.com/gemsfix/delayed-web/blob/master/config/locales/en.yml).
+You can find the full list [here](https://github.com/tatey/delayed-web/blob/master/config/locales/en.yml).
 
 ## Developing Locally
 
@@ -145,13 +144,14 @@ It is an in-memory double of a real Delayed::Job.
 
 ## Special Thanks
 
-We're grateful for all our [contributors](https://github.com/thebestday/delayed-web/graphs/contributors),
+We're grateful for all our [contributors](https://github.com/tatey/delayed-web/graphs/contributors),
 but we're especially grateful for contributions by the following people:
 
 * [@anthony-robin](https://github.com/anthony-robin)
 * [@coop](https://github.com/coop)
 * [@eltiare](https://github.com/eltiare)
+* Development originally sponsored by TheBestDay Pty. Ltd.
 
 ## License
 
-Copyright © 2013-2016 TheBestDay Pty. Ltd. Released under the MIT license. See LICENSE.
+Released under the MIT license. See LICENSE.
