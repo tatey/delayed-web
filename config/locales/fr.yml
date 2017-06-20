@@ -12,6 +12,7 @@ fr:
       server_time: Heure du serveur
       handler: Gestionnaire
       actions: Actions
+      current_queue: File
       queue:
         empty: Une file d'attente vide est une bonne file d'attente.
       errors:

@@ -12,6 +12,7 @@ en:
       server_time: Server Time
       handler: Handler
       actions: Actions
+      current_queue: Queue
       buttons:
         run_next: Run Next
         delete: Delete

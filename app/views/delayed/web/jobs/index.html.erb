@@ -10,6 +10,7 @@
     <tr>
       <th><%= t('delayed/web.views.id') %></th>
       <th><%= t('delayed/web.views.status') %></th>
+      <th><%= t('delayed/web.views.current_queue') %></th>
       <th><%= t('delayed/web.views.created_at') %></th>
       <th><%= t('delayed/web.views.run_at') %></th>
       <th><%= t('delayed/web.views.attempts') %></th>
@@ -27,6 +28,7 @@
               <%= t(job.status, scope: 'delayed/web.views.statuses').capitalize %>
             </span>
           </td>
+          <td><%= job.queue %></td>
           <td style="font-size: 12px;"><%= l(job.created_at, format: :short) %></td>
           <td style="font-size: 12px;"><%= l(job.run_at, format: :short) %></td>
           <td><%= job.attempts %></td>
