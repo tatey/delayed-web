@@ -4,6 +4,7 @@ module Delayed
       attr_accessor :id
       attr_accessor :created_at
       attr_accessor :run_at
+      attr_accessor :queue
       attr_accessor :attempts
       attr_accessor :failed_at
       attr_accessor :locked_at
@@ -15,6 +16,7 @@ module Delayed
         @id         = attributes[:id]
         @created_at = attributes[:created_at]
         @run_at     = attributes[:run_at]
+        @queue      = attributes[:queue]
         @attempts   = attributes[:attempts]
         @failed_at  = attributes[:failed_at]
         @locked_at  = attributes[:locked_at]
