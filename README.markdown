@@ -106,7 +106,7 @@ pipeline.
 
 ## I18n
 
-If you want to translate flash messages, titles, sentences, ... you can set your own I18n translations to override defaults one:
+If you want to translate flash messages, titles, or sentences you can set your own I18n translations to override defaults one:
 
 ```yml
 en:
@@ -120,7 +120,8 @@ en:
       last_error: Last Error
 ```
 
-You can find the full list [here](https://github.com/tatey/delayed-web/blob/master/config/locales/en.yml).
+🇬🇧 English and 🇫🇷 French are supported. You can find the full list
+[here](https://github.com/tatey/delayed-web/blob/master/config/locales/en.yml).
 
 ## Developing Locally
 
