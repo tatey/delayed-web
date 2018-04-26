@@ -120,8 +120,8 @@ en:
       last_error: Last Error
 ```
 
-🇬🇧 English and 🇫🇷 French are supported. You can find the full list
-[here](https://github.com/tatey/delayed-web/blob/master/config/locales/en.yml).
+🇬🇧 English, 🇫🇷 French, and 🇧🇷 Portuguese are supported. You can find the full list
+[here](https://github.com/tatey/delayed-web/blob/master/config/locales/).
 
 ## Developing Locally
 
