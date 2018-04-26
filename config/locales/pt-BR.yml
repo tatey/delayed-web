@@ -1,0 +1,40 @@
+pt-BR:
+  delayed/web:
+    views:
+      id: ID
+      job: Tarefa
+      jobs: Tarefas
+      status: Situação
+      created_at: Criado em
+      run_at: Executar em
+      attempts: Tentativas
+      last_error: Último erro
+      server_time: Horário do servidor
+      handler: Argumentos
+      actions: Ações
+      current_queue: Fila
+      buttons:
+        run_next: Executar próximo
+        delete: Excluir
+      queue:
+        empty: Uma fila limpa é uma boa fila.
+      errors:
+        empty: Não existem erros
+      statuses:
+        executing: Executando
+        failed: Com erro
+        queued: Enfileirado
+      confirm:
+        delete: Tem certeza que deseja excluir esta tarefa?
+    flashes:
+      jobs:
+        queued:
+          alert: 'Tarefa não pode ser enfileirada porque ela já está %{status}'
+          notice: 'Tarefa enfileirada'
+        destroyed:
+          alert: 'Tarefa não pode ser excluída porque ela já está %{status}'
+          notice: 'Tarefa excluída'
+
+  time:
+    formats:
+      short: '%d/%m/%Y às %r'
