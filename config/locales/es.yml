@@ -1,0 +1,40 @@
+es:
+  delayed/web:
+    views:
+      id: ID
+      job: Trabajo
+      jobs: Trabajos
+      status: Estado
+      created_at: Creado en
+      run_at: Correr el
+      attempts: Intentos
+      last_error: Último Error
+      server_time: Tiempo de servidor
+      handler: Handler
+      actions: Acciones
+      current_queue: Cola
+      buttons:
+        run_next: Ejecutar próximo
+        delete: Eliminar
+      queue:
+        empty: Una cola vacía, es una buena cola.
+      errors:
+        empty: No hay ningún error
+      statuses:
+        executing: Ejecutando
+        failed: Fallido
+        queued: Encolado
+      confirm:
+        delete: ¿Estás seguro que deseas eliminar este trabano?
+    flashes:
+      jobs:
+        queued:
+          alert: 'El trabajo no pudo ser en colado ya que se encuentra %{status}'
+          notice: 'Trabajo encolado'
+        destroyed:
+          alert: 'El trabajo no pudo ser en eliminado ya que se encuentra %{status}'
+          notice: 'Trabajo eliminado'
+
+  time:
+    formats:
+      short: '%d/%m/%Y at %r'
