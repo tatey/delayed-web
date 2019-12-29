@@ -1,0 +1,40 @@
+de:
+  delayed/web:
+    views:
+      id: ID
+      job: Job
+      jobs: Jobs
+      status: Status
+      created_at: Erstellt am
+      run_at: Gelaufen am
+      attempts: Versuche
+      last_error: Letzter Fehler
+      server_time: Server Zeit
+      handler: Handler
+      actions: Aktionen
+      current_queue: Queue
+      buttons:
+        run_next: Als nächstes starten
+        delete: Löschen
+      queue:
+        empty: Eine leere Warteschlange ist eine gute Warteschlange.
+      errors:
+        empty: Fehlerfrei
+      statuses:
+        executing: Wird ausgeführt
+        failed: Fehlgeschlagen
+        queued: Eingereiht
+      confirm:
+        delete: Möchten Sie den Job wirklich löschen?
+    flashes:
+      jobs:
+        queued:
+          alert: 'Der Job kann nicht eingereiht werden, der er bereits den Status %{status} hat'
+          notice: 'Job eingereiht'
+        destroyed:
+          alert: 'Der Job kann nicht gelöscht werden, da er bereits den Status %{status} hat'
+          notice: 'Job gelöscht'
+
+  time:
+    formats:
+      short: '%d.%m.%Y um %T'
