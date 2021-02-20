@@ -10,7 +10,7 @@ A rails engine that provides a simple web interface for exposing the
 ## Requirements
 
 * Ruby 2.2.x, 2.3.x
-* Rails 3.2.x, 4.0.x, 4.1.x, 4.2.x, 5.0.x
+* Rails 3.2.x, 4.0.x, 4.1.x, 4.2.x, 5.0.x, 6.x
 * Delayed::Job 3.0.x, 4.0.x
 * ActiveRecord or Mongoid
 
@@ -151,6 +151,7 @@ but we're especially grateful for contributions by the following people:
 * [@anthony-robin](https://github.com/anthony-robin)
 * [@coop](https://github.com/coop)
 * [@eltiare](https://github.com/eltiare)
+* [@cseelus](https://github.com/cseelus)
 * Development originally sponsored by TheBestDay Pty. Ltd.
 
 ## License
